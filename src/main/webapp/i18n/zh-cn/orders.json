@@ -16,10 +16,11 @@
             "detail": {
                 "title": "Orders"
             },
+            "books": "Books",
             "extra1": "Extra 1",
             "extra2": "Extra 2",
             "suser": "Suser",
-            "shoppingId": "Shopping Id"
+            "addressId": "Address Id"
         }
     }
 }

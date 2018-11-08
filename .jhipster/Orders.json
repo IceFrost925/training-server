@@ -9,12 +9,16 @@
         },
         {
             "relationshipType": "many-to-one",
-            "relationshipName": "shoppingId",
-            "otherEntityName": "shopping",
+            "relationshipName": "addressId",
+            "otherEntityName": "address",
             "otherEntityField": "id"
         }
     ],
     "fields": [
+        {
+            "fieldName": "books",
+            "fieldType": "String"
+        },
         {
             "fieldName": "extra1",
             "fieldType": "String"

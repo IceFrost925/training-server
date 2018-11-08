@@ -14,11 +14,11 @@
                                  referencedColumnNames="id"
                                  referencedTableName="s_user"/>
 
-        <addForeignKeyConstraint baseColumnNames="shopping_id_id"
+        <addForeignKeyConstraint baseColumnNames="address_id_id"
                                  baseTableName="orders"
-                                 constraintName="fk_orders_shopping_id_id"
+                                 constraintName="fk_orders_address_id_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="shopping"/>
+                                 referencedTableName="address"/>
 
     </changeSet>
 </databaseChangeLog>

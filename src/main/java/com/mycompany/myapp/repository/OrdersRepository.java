@@ -14,6 +14,5 @@ import java.util.List;
 @SuppressWarnings("unused")
 @Repository
 public interface OrdersRepository extends JpaRepository<Orders, Long> {
-
-    List<Orders> findBySuserIdAndExtra2(Long userId, String active);
+    List<Orders> findBySuserIdAndExtra1(Long userId,String active);
 }

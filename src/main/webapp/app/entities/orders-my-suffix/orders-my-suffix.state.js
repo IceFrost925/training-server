@@ -104,6 +104,7 @@
                     resolve: {
                         entity: function () {
                             return {
+                                books: null,
                                 extra1: null,
                                 extra2: null,
                                 id: null

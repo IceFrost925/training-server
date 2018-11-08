@@ -14,6 +14,12 @@
                     ng-model="vm.orders.id" readonly />
         </div>
         <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.orders.books" for="field_books">Books</label>
+            <input type="text" class="form-control" name="books" id="field_books"
+                    ng-model="vm.orders.books"
+                    />
+        </div>
+        <div class="form-group">
             <label class="control-label" data-translate="trainingApp.orders.extra1" for="field_extra1">Extra 1</label>
             <input type="text" class="form-control" name="extra1" id="field_extra1"
                     ng-model="vm.orders.extra1"
@@ -33,8 +39,8 @@
             </select>
         </div>
         <div class="form-group">
-            <label data-translate="trainingApp.orders.shoppingId" for="field_shoppingId">Shopping Id</label>
-            <select class="form-control" id="field_shoppingId" name="shoppingId" ng-model="vm.orders.shoppingIdId" ng-options="shopping.id as shopping.id for shopping in vm.shoppings"            >
+            <label data-translate="trainingApp.orders.addressId" for="field_addressId">Address Id</label>
+            <select class="form-control" id="field_addressId" name="addressId" ng-model="vm.orders.addressIdId" ng-options="address.id as address.id for address in vm.addresses"            >
                 <option value=""></option>
             </select>
         </div>

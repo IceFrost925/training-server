@@ -4,6 +4,10 @@
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="trainingApp.orders.books">Books</span></dt>
+        <dd>
+            <span>{{vm.orders.books}}</span>
+        </dd>
         <dt><span data-translate="trainingApp.orders.extra1">Extra 1</span></dt>
         <dd>
             <span>{{vm.orders.extra1}}</span>
@@ -16,9 +20,9 @@
         <dd>
             <a ui-sref="s-user-my-suffix-detail({id:vm.orders.suserId})">{{vm.orders.suserId}}</a>
         </dd>
-        <dt><span data-translate="trainingApp.orders.shoppingId">Shopping Id</span></dt>
+        <dt><span data-translate="trainingApp.orders.addressId">Address Id</span></dt>
         <dd>
-            <a ui-sref="shopping-my-suffix-detail({id:vm.orders.shoppingIdId})">{{vm.orders.shoppingIdId}}</a>
+            <a ui-sref="address-my-suffix-detail({id:vm.orders.addressIdId})">{{vm.orders.addressIdId}}</a>
         </dd>
     </dl>
 

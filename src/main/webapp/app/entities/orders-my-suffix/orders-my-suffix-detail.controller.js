@@ -5,9 +5,9 @@
         .module('trainingApp')
         .controller('OrdersMySuffixDetailController', OrdersMySuffixDetailController);
 
-    OrdersMySuffixDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Orders', 'SUser', 'Shopping'];
+    OrdersMySuffixDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Orders', 'SUser', 'Address'];
 
-    function OrdersMySuffixDetailController($scope, $rootScope, $stateParams, previousState, entity, Orders, SUser, Shopping) {
+    function OrdersMySuffixDetailController($scope, $rootScope, $stateParams, previousState, entity, Orders, SUser, Address) {
         var vm = this;
 
         vm.orders = entity;

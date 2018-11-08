@@ -1,7 +1,6 @@
 package com.mycompany.myapp.service;
 
 import com.mycompany.myapp.domain.Orders;
-import com.mycompany.myapp.service.dto.OrderNewDTO;
 import com.mycompany.myapp.service.dto.OrdersDTO;
 import com.mycompany.myapp.web.rest.util.ResultObj;
 
@@ -42,7 +41,7 @@ public interface OrdersService {
      */
     void delete(Long id);
 
-    ResultObj createOrder(OrderNewDTO ordersDTO);
+    ResultObj createOrder(OrdersDTO ordersDTO);
 
     ResultObj updateOrderAddress(Long id,Long addressId);
 

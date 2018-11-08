@@ -2,7 +2,6 @@ package com.mycompany.myapp.web.rest.controller;
 
 import com.codahale.metrics.annotation.Timed;
 import com.mycompany.myapp.service.OrdersService;
-import com.mycompany.myapp.service.dto.AddressDTO;
 import com.mycompany.myapp.service.dto.OrderNewDTO;
 import com.mycompany.myapp.service.dto.OrdersDTO;
 import com.mycompany.myapp.web.rest.OrdersResource;
@@ -30,7 +29,7 @@ public class OrderController {
     @ApiOperation("新增订单表 RequestBody")
     @PostMapping("/permit/order")
     @Timed
-    public ResultObj createOrder(@RequestBody OrderNewDTO ordersDTO) throws URISyntaxException {
+    public ResultObj createOrder(@RequestBody OrdersDTO ordersDTO) throws URISyntaxException {
         return ordersService.createOrder(ordersDTO);
     }
 

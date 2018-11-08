@@ -3,11 +3,10 @@ package com.mycompany.myapp.service.impl;
 import com.mycompany.myapp.service.OrdersService;
 import com.mycompany.myapp.domain.Orders;
 import com.mycompany.myapp.repository.OrdersRepository;
-import com.mycompany.myapp.service.dto.OrderNewDTO;
 import com.mycompany.myapp.service.dto.OrdersDTO;
 import com.mycompany.myapp.service.mapper.OrdersMapper;
 import com.mycompany.myapp.web.rest.util.ResultObj;
-import net.minidev.json.JSONArray;
+import com.mycompany.myapp.web.rest.util.TypeUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -16,7 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
-
 
 /**
  * Service Implementation for managing Orders.
@@ -90,36 +88,31 @@ public class OrdersServiceImpl implements OrdersService {
     }
 
     @Override
-    public ResultObj createOrder(OrderNewDTO orderNewDTO) {
-        OrdersDTO ordersDTO = new OrdersDTO();
-        ordersDTO.setSuserId(orderNewDTO.getSuserId());
-        ordersDTO.setShoppingIdId(orderNewDTO.getAddressId());
-        ordersDTO.setExtra1(JSONArray.toJSONString(orderNewDTO.getBookIdList()));
-        ordersDTO.setExtra2("'0'");
-        save(ordersDTO);
-        return ResultObj.backInfo(true,200,"已添加订单",null);
+    public ResultObj createOrder(OrdersDTO ordersDTO) {
+        if(!TypeUtils.isEmpty(ordersDTO.getBooks())){
+            ordersDTO.setExtra1("'0'");
+            save(ordersDTO);
+            return ResultObj.backInfo(true,200,"生成订单成功",null);
+        }
+        return ResultObj.backInfo(false,200,"生成订单失败",null);
     }
 
     @Override
-    public ResultObj updateOrderAddress(Long id,Long addressId) {
+    public ResultObj updateOrderAddress(Long id, Long addressId) {
         OrdersDTO ordersDTO = findOne(id);
-        ordersDTO.setShoppingIdId(addressId);
-        ordersDTO.setExtra2("'1'");
-        save(ordersDTO);
-        return ResultObj.backInfo(true,200,"支付成功",null);
-    }
-
-    @Override
-    public List<Orders> selectAllUnfinishedOrders(Long userId) {
-        return ordersRepository.findBySuserIdAndExtra2(userId,"'1'");
+        ordersDTO.setAddressIdId(addressId);
+        ordersDTO.setExtra1("'1'");
+        return null;
     }
 
     @Override
     public List<Orders> selectAllOrders(Long userId) {
-        return ordersRepository.findBySuserIdAndExtra2(userId,"'0'");
+        return ordersRepository.findBySuserIdAndExtra1(userId,"'1'");
     }
 
+    @Override
+    public List<Orders> selectAllUnfinishedOrders(Long userId) {
+        return ordersRepository.findBySuserIdAndExtra1(userId,"'0'");
 
-
-
+    }
 }

@@ -19,23 +19,25 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="trainingApp.orders.books">Books</span></th>
                     <th><span data-translate="trainingApp.orders.extra1">Extra 1</span></th>
                     <th><span data-translate="trainingApp.orders.extra2">Extra 2</span></th>
                     <th><span data-translate="trainingApp.orders.suser">Suser</span></th>
-                    <th><span data-translate="trainingApp.orders.shoppingId">Shopping Id</span></th>
+                    <th><span data-translate="trainingApp.orders.addressId">Address Id</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="orders in vm.orders track by orders.id">
                     <td><a ui-sref="orders-my-suffix-detail({id:orders.id})">{{orders.id}}</a></td>
+                    <td>{{orders.books}}</td>
                     <td>{{orders.extra1}}</td>
                     <td>{{orders.extra2}}</td>
                     <td>
                         <a ui-sref="s-user-my-suffix-detail({id:orders.suserId})">{{orders.suserId}}</a>
                     </td>
                     <td>
-                        <a ui-sref="shopping-my-suffix-detail({id:orders.shoppingIdId})">{{orders.shoppingIdId}}</a>
+                        <a ui-sref="address-my-suffix-detail({id:orders.addressIdId})">{{orders.addressIdId}}</a>
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

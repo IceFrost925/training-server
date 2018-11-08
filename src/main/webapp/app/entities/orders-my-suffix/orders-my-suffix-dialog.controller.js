@@ -5,16 +5,16 @@
         .module('trainingApp')
         .controller('OrdersMySuffixDialogController', OrdersMySuffixDialogController);
 
-    OrdersMySuffixDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Orders', 'SUser', 'Shopping'];
+    OrdersMySuffixDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Orders', 'SUser', 'Address'];
 
-    function OrdersMySuffixDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Orders, SUser, Shopping) {
+    function OrdersMySuffixDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Orders, SUser, Address) {
         var vm = this;
 
         vm.orders = entity;
         vm.clear = clear;
         vm.save = save;
         vm.susers = SUser.query();
-        vm.shoppings = Shopping.query();
+        vm.addresses = Address.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

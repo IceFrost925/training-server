@@ -19,6 +19,9 @@ public class Orders implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "books")
+    private String books;
+
     @Column(name = "extra_1")
     private String extra1;
 
@@ -29,7 +32,7 @@ public class Orders implements Serializable {
     private SUser suser;
 
     @ManyToOne
-    private Shopping shoppingId;
+    private Address addressId;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -38,6 +41,19 @@ public class Orders implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getBooks() {
+        return books;
+    }
+
+    public Orders books(String books) {
+        this.books = books;
+        return this;
+    }
+
+    public void setBooks(String books) {
+        this.books = books;
     }
 
     public String getExtra1() {
@@ -79,17 +95,17 @@ public class Orders implements Serializable {
         this.suser = sUser;
     }
 
-    public Shopping getShoppingId() {
-        return shoppingId;
+    public Address getAddressId() {
+        return addressId;
     }
 
-    public Orders shoppingId(Shopping shopping) {
-        this.shoppingId = shopping;
+    public Orders addressId(Address address) {
+        this.addressId = address;
         return this;
     }
 
-    public void setShoppingId(Shopping shopping) {
-        this.shoppingId = shopping;
+    public void setAddressId(Address address) {
+        this.addressId = address;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
@@ -117,6 +133,7 @@ public class Orders implements Serializable {
     public String toString() {
         return "Orders{" +
             "id=" + getId() +
+            ", books='" + getBooks() + "'" +
             ", extra1='" + getExtra1() + "'" +
             ", extra2='" + getExtra2() + "'" +
             "}";

@@ -13,13 +13,15 @@ public class OrdersDTO implements Serializable {
 
     private Long id;
 
+    private String books;
+
     private String extra1;
 
     private String extra2;
 
     private Long suserId;
 
-    private Long shoppingIdId;
+    private Long addressIdId;
 
     public Long getId() {
         return id;
@@ -27,6 +29,14 @@ public class OrdersDTO implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getBooks() {
+        return books;
+    }
+
+    public void setBooks(String books) {
+        this.books = books;
     }
 
     public String getExtra1() {
@@ -53,12 +63,12 @@ public class OrdersDTO implements Serializable {
         this.suserId = sUserId;
     }
 
-    public Long getShoppingIdId() {
-        return shoppingIdId;
+    public Long getAddressIdId() {
+        return addressIdId;
     }
 
-    public void setShoppingIdId(Long shoppingId) {
-        this.shoppingIdId = shoppingId;
+    public void setAddressIdId(Long addressId) {
+        this.addressIdId = addressId;
     }
 
     @Override
@@ -86,6 +96,7 @@ public class OrdersDTO implements Serializable {
     public String toString() {
         return "OrdersDTO{" +
             "id=" + getId() +
+            ", books='" + getBooks() + "'" +
             ", extra1='" + getExtra1() + "'" +
             ", extra2='" + getExtra2() + "'" +
             "}";

@@ -41,6 +41,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = TrainingApp.class)
 public class OrdersResourceIntTest {
 
+    private static final String DEFAULT_BOOKS = "AAAAAAAAAA";
+    private static final String UPDATED_BOOKS = "BBBBBBBBBB";
+
     private static final String DEFAULT_EXTRA_1 = "AAAAAAAAAA";
     private static final String UPDATED_EXTRA_1 = "BBBBBBBBBB";
 
@@ -91,6 +94,7 @@ public class OrdersResourceIntTest {
      */
     public static Orders createEntity(EntityManager em) {
         Orders orders = new Orders()
+            .books(DEFAULT_BOOKS)
             .extra1(DEFAULT_EXTRA_1)
             .extra2(DEFAULT_EXTRA_2);
         return orders;
@@ -117,6 +121,7 @@ public class OrdersResourceIntTest {
         List<Orders> ordersList = ordersRepository.findAll();
         assertThat(ordersList).hasSize(databaseSizeBeforeCreate + 1);
         Orders testOrders = ordersList.get(ordersList.size() - 1);
+        assertThat(testOrders.getBooks()).isEqualTo(DEFAULT_BOOKS);
         assertThat(testOrders.getExtra1()).isEqualTo(DEFAULT_EXTRA_1);
         assertThat(testOrders.getExtra2()).isEqualTo(DEFAULT_EXTRA_2);
     }
@@ -152,6 +157,7 @@ public class OrdersResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(orders.getId().intValue())))
+            .andExpect(jsonPath("$.[*].books").value(hasItem(DEFAULT_BOOKS.toString())))
             .andExpect(jsonPath("$.[*].extra1").value(hasItem(DEFAULT_EXTRA_1.toString())))
             .andExpect(jsonPath("$.[*].extra2").value(hasItem(DEFAULT_EXTRA_2.toString())));
     }
@@ -167,6 +173,7 @@ public class OrdersResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(orders.getId().intValue()))
+            .andExpect(jsonPath("$.books").value(DEFAULT_BOOKS.toString()))
             .andExpect(jsonPath("$.extra1").value(DEFAULT_EXTRA_1.toString()))
             .andExpect(jsonPath("$.extra2").value(DEFAULT_EXTRA_2.toString()));
     }
@@ -191,6 +198,7 @@ public class OrdersResourceIntTest {
         // Disconnect from session so that the updates on updatedOrders are not directly saved in db
         em.detach(updatedOrders);
         updatedOrders
+            .books(UPDATED_BOOKS)
             .extra1(UPDATED_EXTRA_1)
             .extra2(UPDATED_EXTRA_2);
         OrdersDTO ordersDTO = ordersMapper.toDto(updatedOrders);
@@ -204,6 +212,7 @@ public class OrdersResourceIntTest {
         List<Orders> ordersList = ordersRepository.findAll();
         assertThat(ordersList).hasSize(databaseSizeBeforeUpdate);
         Orders testOrders = ordersList.get(ordersList.size() - 1);
+        assertThat(testOrders.getBooks()).isEqualTo(UPDATED_BOOKS);
         assertThat(testOrders.getExtra1()).isEqualTo(UPDATED_EXTRA_1);
         assertThat(testOrders.getExtra2()).isEqualTo(UPDATED_EXTRA_2);
     }

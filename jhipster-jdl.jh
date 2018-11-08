@@ -51,6 +51,7 @@ entity Shopping {
 }
 
 entity Orders {
+    books String,
     extra1 String,
     extra2 String
 }
@@ -72,7 +73,7 @@ relationship ManyToOne {
     Shopping{suser} to SUser,
     Shopping{bookId} to Books,
     Orders{suser} to SUser,
-    Orders{shoppingId} to Shopping
+    Orders{AddressId} to Address
 }
 
 dto * with mapstruct
