@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="trainingApp.appraise.detail.title">Appraise</span> {{vm.appraise.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="trainingApp.appraise.content">Content</span></dt>
+        <dd>
+            <span>{{vm.appraise.content}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.appraise.star">Star</span></dt>
+        <dd>
+            <span>{{vm.appraise.star}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.appraise.extra1">Extra 1</span></dt>
+        <dd>
+            <span>{{vm.appraise.extra1}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.appraise.extra2">Extra 2</span></dt>
+        <dd>
+            <span>{{vm.appraise.extra2}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.appraise.suser">Suser</span></dt>
+        <dd>
+            <a ui-sref="s-user-my-suffix-detail({id:vm.appraise.suserId})">{{vm.appraise.suserId}}</a>
+        </dd>
+        <dt><span data-translate="trainingApp.appraise.bookId">Book Id</span></dt>
+        <dd>
+            <a ui-sref="books-my-suffix-detail({id:vm.appraise.bookIdId})">{{vm.appraise.bookIdId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="appraise-my-suffix-detail.edit({id:vm.appraise.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

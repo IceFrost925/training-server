@@ -1,0 +1,30 @@
+
+{
+    "trainingApp": {
+        "books" : {
+            "home": {
+                "title": "Books",
+                "createLabel": "创建新 Books",
+                "createOrEditLabel": "创建或编辑 Books"
+            },
+            "created": "Books {{ param }} 创建成功",
+            "updated": "Books {{ param }} 更新成功",
+            "deleted": "Books {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Books {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Books"
+            },
+            "picture": "Picture",
+            "name": "Name",
+            "type": "Type",
+            "number": "Number",
+            "count": "Count",
+            "price": "Price",
+            "describe": "Describe",
+            "extra1": "Extra 1",
+            "extra2": "Extra 2"
+        }
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "suser",
+            "otherEntityName": "sUser",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "bookId",
+            "otherEntityName": "books",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "content",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "star",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "extra1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "extra2",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20181106013953",
+    "entityTableName": "appraise",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

@@ -1,0 +1,29 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "second",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "extra1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "extra2",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20181106013957",
+    "entityTableName": "menus",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

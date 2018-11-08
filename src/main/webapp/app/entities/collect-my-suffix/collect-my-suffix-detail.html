@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="trainingApp.collect.detail.title">Collect</span> {{vm.collect.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="trainingApp.collect.extra1">Extra 1</span></dt>
+        <dd>
+            <span>{{vm.collect.extra1}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.collect.extra2">Extra 2</span></dt>
+        <dd>
+            <span>{{vm.collect.extra2}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.collect.suser">Suser</span></dt>
+        <dd>
+            <a ui-sref="s-user-my-suffix-detail({id:vm.collect.suserId})">{{vm.collect.suserId}}</a>
+        </dd>
+        <dt><span data-translate="trainingApp.collect.bookId">Book Id</span></dt>
+        <dd>
+            <a ui-sref="books-my-suffix-detail({id:vm.collect.bookIdId})">{{vm.collect.bookIdId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="collect-my-suffix-detail.edit({id:vm.collect.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

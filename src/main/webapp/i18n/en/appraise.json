@@ -1,0 +1,27 @@
+
+{
+    "trainingApp": {
+        "appraise" : {
+            "home": {
+                "title": "Appraises",
+                "createLabel": "Create a new Appraise",
+                "createOrEditLabel": "Create or edit a Appraise"
+            },
+            "created": "A new Appraise is created with identifier {{ param }}",
+            "updated": "A Appraise is updated with identifier {{ param }}",
+            "deleted": "A Appraise is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Appraise {{ id }}?"
+            },
+            "detail": {
+                "title": "Appraise"
+            },
+            "content": "Content",
+            "star": "Star",
+            "extra1": "Extra 1",
+            "extra2": "Extra 2",
+            "suser": "Suser",
+            "bookId": "Book Id"
+        }
+    }
+}

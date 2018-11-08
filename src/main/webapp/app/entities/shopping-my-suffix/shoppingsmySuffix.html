@@ -1,0 +1,68 @@
+<div>
+    <h2 data-translate="trainingApp.shopping.home.title">Shoppings</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="shopping-my-suffix.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="trainingApp.shopping.home.createLabel">
+                        Create new Shopping
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="trainingApp.shopping.number">Number</span></th>
+                    <th><span data-translate="trainingApp.shopping.extra1">Extra 1</span></th>
+                    <th><span data-translate="trainingApp.shopping.extra2">Extra 2</span></th>
+                    <th><span data-translate="trainingApp.shopping.suser">Suser</span></th>
+                    <th><span data-translate="trainingApp.shopping.bookId">Book Id</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="shopping in vm.shoppings track by shopping.id">
+                    <td><a ui-sref="shopping-my-suffix-detail({id:shopping.id})">{{shopping.id}}</a></td>
+                    <td>{{shopping.number}}</td>
+                    <td>{{shopping.extra1}}</td>
+                    <td>{{shopping.extra2}}</td>
+                    <td>
+                        <a ui-sref="s-user-my-suffix-detail({id:shopping.suserId})">{{shopping.suserId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="books-my-suffix-detail({id:shopping.bookIdId})">{{shopping.bookIdId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="shopping-my-suffix-detail({id:shopping.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="shopping-my-suffix.edit({id:shopping.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="shopping-my-suffix.delete({id:shopping.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

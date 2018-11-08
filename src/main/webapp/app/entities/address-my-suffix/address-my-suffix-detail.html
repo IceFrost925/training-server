@@ -1,0 +1,55 @@
+
+<div>
+    <h2><span data-translate="trainingApp.address.detail.title">Address</span> {{vm.address.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="trainingApp.address.name">Name</span></dt>
+        <dd>
+            <span>{{vm.address.name}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.address.tell">Tell</span></dt>
+        <dd>
+            <span>{{vm.address.tell}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.address.company">Company</span></dt>
+        <dd>
+            <span>{{vm.address.company}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.address.email">Email</span></dt>
+        <dd>
+            <span>{{vm.address.email}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.address.content">Content</span></dt>
+        <dd>
+            <span>{{vm.address.content}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.address.flag">Flag</span></dt>
+        <dd>
+            <span>{{vm.address.flag}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.address.extra1">Extra 1</span></dt>
+        <dd>
+            <span>{{vm.address.extra1}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.address.extra2">Extra 2</span></dt>
+        <dd>
+            <span>{{vm.address.extra2}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.address.suser">Suser</span></dt>
+        <dd>
+            <a ui-sref="s-user-my-suffix-detail({id:vm.address.suserId})">{{vm.address.suserId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="address-my-suffix-detail.edit({id:vm.address.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

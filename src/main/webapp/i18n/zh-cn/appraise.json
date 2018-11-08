@@ -1,0 +1,27 @@
+
+{
+    "trainingApp": {
+        "appraise" : {
+            "home": {
+                "title": "Appraises",
+                "createLabel": "创建新 Appraise",
+                "createOrEditLabel": "创建或编辑 Appraise"
+            },
+            "created": "Appraise {{ param }} 创建成功",
+            "updated": "Appraise {{ param }} 更新成功",
+            "deleted": "Appraise {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Appraise {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Appraise"
+            },
+            "content": "Content",
+            "star": "Star",
+            "extra1": "Extra 1",
+            "extra2": "Extra 2",
+            "suser": "Suser",
+            "bookId": "Book Id"
+        }
+    }
+}

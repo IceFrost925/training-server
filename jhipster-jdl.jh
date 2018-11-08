@@ -1,0 +1,83 @@
+entity SUser {
+	username String,
+    image String,
+    email String,
+    passwd String,
+    tell String,
+    integral Integer
+    extra1 String,
+    extra2 String
+}
+
+entity Books {
+	picture String,
+    name String,
+    type String,
+    number String,
+    count Integer,
+    price Double,
+    describe String
+    extra1 String,
+    extra2 String
+}
+
+entity Address {
+	name String,
+    tell String,
+    company String,
+    email String,
+    content String,
+    flag Boolean
+    extra1 String,
+    extra2 String
+}
+
+entity Appraise {
+    content String,
+    star Integer
+    extra1 String,
+    extra2 String
+}
+
+entity Collect {
+    extra1 String,
+    extra2 String
+}
+
+entity Shopping {
+    number String
+    extra1 String,
+    extra2 String
+}
+
+entity Orders {
+    extra1 String,
+    extra2 String
+}
+
+entity Menus {
+	type String,
+    second String
+    extra1 String,
+    extra2 String
+}
+
+
+relationship ManyToOne {
+	Address{suser} to SUser,
+    Appraise{suser} to SUser,
+    Appraise{bookId} to Books,
+    Collect{suser} to SUser,
+    Collect{bookId} to Books,
+    Shopping{suser} to SUser,
+    Shopping{bookId} to Books,
+    Orders{suser} to SUser,
+    Orders{shoppingId} to Shopping
+}
+
+dto * with mapstruct
+service * with serviceImpl
+// Set service options to all except few
+
+// Set an angular suffix
+angularSuffix * with mySuffix

@@ -1,0 +1,30 @@
+
+{
+    "trainingApp": {
+        "books" : {
+            "home": {
+                "title": "Books",
+                "createLabel": "Create a new Books",
+                "createOrEditLabel": "Create or edit a Books"
+            },
+            "created": "A new Books is created with identifier {{ param }}",
+            "updated": "A Books is updated with identifier {{ param }}",
+            "deleted": "A Books is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Books {{ id }}?"
+            },
+            "detail": {
+                "title": "Books"
+            },
+            "picture": "Picture",
+            "name": "Name",
+            "type": "Type",
+            "number": "Number",
+            "count": "Count",
+            "price": "Price",
+            "describe": "Describe",
+            "extra1": "Extra 1",
+            "extra2": "Extra 2"
+        }
+    }
+}

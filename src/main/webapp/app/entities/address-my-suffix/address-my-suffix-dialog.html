@@ -1,0 +1,79 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myAddressLabel" data-translate="trainingApp.address.home.createOrEditLabel">Create or edit a Address</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.address.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.address.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.address.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.address.name"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.address.tell" for="field_tell">Tell</label>
+            <input type="text" class="form-control" name="tell" id="field_tell"
+                    ng-model="vm.address.tell"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.address.company" for="field_company">Company</label>
+            <input type="text" class="form-control" name="company" id="field_company"
+                    ng-model="vm.address.company"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.address.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="vm.address.email"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.address.content" for="field_content">Content</label>
+            <input type="text" class="form-control" name="content" id="field_content"
+                    ng-model="vm.address.content"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.address.flag" for="field_flag">Flag</label>
+                <input type="checkbox" name="flag" id="field_flag"
+                          ng-model="vm.address.flag"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.address.extra1" for="field_extra1">Extra 1</label>
+            <input type="text" class="form-control" name="extra1" id="field_extra1"
+                    ng-model="vm.address.extra1"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.address.extra2" for="field_extra2">Extra 2</label>
+            <input type="text" class="form-control" name="extra2" id="field_extra2"
+                    ng-model="vm.address.extra2"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="trainingApp.address.suser" for="field_suser">Suser</label>
+            <select class="form-control" id="field_suser" name="suser" ng-model="vm.address.suserId" ng-options="sUser.id as sUser.id for sUser in vm.susers"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

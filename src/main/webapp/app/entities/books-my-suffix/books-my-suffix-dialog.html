@@ -1,0 +1,80 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myBooksLabel" data-translate="trainingApp.books.home.createOrEditLabel">Create or edit a Books</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.books.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.books.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.books.picture" for="field_picture">Picture</label>
+            <input type="text" class="form-control" name="picture" id="field_picture"
+                    ng-model="vm.books.picture"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.books.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.books.name"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.books.type" for="field_type">Type</label>
+            <input type="text" class="form-control" name="type" id="field_type"
+                    ng-model="vm.books.type"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.books.number" for="field_number">Number</label>
+            <input type="text" class="form-control" name="number" id="field_number"
+                    ng-model="vm.books.number"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.books.count" for="field_count">Count</label>
+            <input type="number" class="form-control" name="count" id="field_count"
+                    ng-model="vm.books.count"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.books.price" for="field_price">Price</label>
+            <input type="number" class="form-control" name="price" id="field_price"
+                    ng-model="vm.books.price"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.books.describe" for="field_describe">Describe</label>
+            <input type="text" class="form-control" name="describe" id="field_describe"
+                    ng-model="vm.books.describe"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.books.extra1" for="field_extra1">Extra 1</label>
+            <input type="text" class="form-control" name="extra1" id="field_extra1"
+                    ng-model="vm.books.extra1"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.books.extra2" for="field_extra2">Extra 2</label>
+            <input type="text" class="form-control" name="extra2" id="field_extra2"
+                    ng-model="vm.books.extra2"
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,45 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "username",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "image",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "passwd",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tell",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "integral",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "extra1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "extra2",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20181106013950",
+    "entityTableName": "s_user",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

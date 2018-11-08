@@ -1,0 +1,74 @@
+<div>
+    <h2 data-translate="trainingApp.address.home.title">Addresses</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="address-my-suffix.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="trainingApp.address.home.createLabel">
+                        Create new Address
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="trainingApp.address.name">Name</span></th>
+                    <th><span data-translate="trainingApp.address.tell">Tell</span></th>
+                    <th><span data-translate="trainingApp.address.company">Company</span></th>
+                    <th><span data-translate="trainingApp.address.email">Email</span></th>
+                    <th><span data-translate="trainingApp.address.content">Content</span></th>
+                    <th><span data-translate="trainingApp.address.flag">Flag</span></th>
+                    <th><span data-translate="trainingApp.address.extra1">Extra 1</span></th>
+                    <th><span data-translate="trainingApp.address.extra2">Extra 2</span></th>
+                    <th><span data-translate="trainingApp.address.suser">Suser</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="address in vm.addresses track by address.id">
+                    <td><a ui-sref="address-my-suffix-detail({id:address.id})">{{address.id}}</a></td>
+                    <td>{{address.name}}</td>
+                    <td>{{address.tell}}</td>
+                    <td>{{address.company}}</td>
+                    <td>{{address.email}}</td>
+                    <td>{{address.content}}</td>
+                    <td>{{address.flag}}</td>
+                    <td>{{address.extra1}}</td>
+                    <td>{{address.extra2}}</td>
+                    <td>
+                        <a ui-sref="s-user-my-suffix-detail({id:address.suserId})">{{address.suserId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="address-my-suffix-detail({id:address.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="address-my-suffix.edit({id:address.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="address-my-suffix.delete({id:address.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

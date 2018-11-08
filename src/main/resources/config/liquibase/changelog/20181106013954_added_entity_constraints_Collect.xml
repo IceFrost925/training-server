@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Collect.
+    -->
+    <changeSet id="20181106013954-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="suser_id"
+                                 baseTableName="collect"
+                                 constraintName="fk_collect_suser_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="s_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="book_id_id"
+                                 baseTableName="collect"
+                                 constraintName="fk_collect_book_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="books"/>
+
+    </changeSet>
+</databaseChangeLog>

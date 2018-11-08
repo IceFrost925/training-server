@@ -1,0 +1,70 @@
+<div>
+    <h2 data-translate="trainingApp.sUser.home.title">S Users</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="s-user-my-suffix.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="trainingApp.sUser.home.createLabel">
+                        Create new S User
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="trainingApp.sUser.username">Username</span></th>
+                    <th><span data-translate="trainingApp.sUser.image">Image</span></th>
+                    <th><span data-translate="trainingApp.sUser.email">Email</span></th>
+                    <th><span data-translate="trainingApp.sUser.passwd">Passwd</span></th>
+                    <th><span data-translate="trainingApp.sUser.tell">Tell</span></th>
+                    <th><span data-translate="trainingApp.sUser.integral">Integral</span></th>
+                    <th><span data-translate="trainingApp.sUser.extra1">Extra 1</span></th>
+                    <th><span data-translate="trainingApp.sUser.extra2">Extra 2</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="sUser in vm.sUsers track by sUser.id">
+                    <td><a ui-sref="s-user-my-suffix-detail({id:sUser.id})">{{sUser.id}}</a></td>
+                    <td>{{sUser.username}}</td>
+                    <td>{{sUser.image}}</td>
+                    <td>{{sUser.email}}</td>
+                    <td>{{sUser.passwd}}</td>
+                    <td>{{sUser.tell}}</td>
+                    <td>{{sUser.integral}}</td>
+                    <td>{{sUser.extra1}}</td>
+                    <td>{{sUser.extra2}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="s-user-my-suffix-detail({id:sUser.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="s-user-my-suffix.edit({id:sUser.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="s-user-my-suffix.delete({id:sUser.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

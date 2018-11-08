@@ -1,0 +1,29 @@
+
+{
+    "trainingApp": {
+        "sUser" : {
+            "home": {
+                "title": "S Users",
+                "createLabel": "Create a new S User",
+                "createOrEditLabel": "Create or edit a S User"
+            },
+            "created": "A new S User is created with identifier {{ param }}",
+            "updated": "A S User is updated with identifier {{ param }}",
+            "deleted": "A S User is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete S User {{ id }}?"
+            },
+            "detail": {
+                "title": "S User"
+            },
+            "username": "Username",
+            "image": "Image",
+            "email": "Email",
+            "passwd": "Passwd",
+            "tell": "Tell",
+            "integral": "Integral",
+            "extra1": "Extra 1",
+            "extra2": "Extra 2"
+        }
+    }
+}

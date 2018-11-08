@@ -1,0 +1,26 @@
+
+{
+    "trainingApp": {
+        "shopping" : {
+            "home": {
+                "title": "Shoppings",
+                "createLabel": "创建新 Shopping",
+                "createOrEditLabel": "创建或编辑 Shopping"
+            },
+            "created": "Shopping {{ param }} 创建成功",
+            "updated": "Shopping {{ param }} 更新成功",
+            "deleted": "Shopping {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Shopping {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Shopping"
+            },
+            "number": "Number",
+            "extra1": "Extra 1",
+            "extra2": "Extra 2",
+            "suser": "Suser",
+            "bookId": "Book Id"
+        }
+    }
+}

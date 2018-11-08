@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="trainingApp.menus.detail.title">Menus</span> {{vm.menus.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="trainingApp.menus.type">Type</span></dt>
+        <dd>
+            <span>{{vm.menus.type}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.menus.second">Second</span></dt>
+        <dd>
+            <span>{{vm.menus.second}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.menus.extra1">Extra 1</span></dt>
+        <dd>
+            <span>{{vm.menus.extra1}}</span>
+        </dd>
+        <dt><span data-translate="trainingApp.menus.extra2">Extra 2</span></dt>
+        <dd>
+            <span>{{vm.menus.extra2}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="menus-my-suffix-detail.edit({id:vm.menus.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

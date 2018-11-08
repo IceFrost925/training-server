@@ -1,0 +1,74 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="mySUserLabel" data-translate="trainingApp.sUser.home.createOrEditLabel">Create or edit a S User</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.sUser.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.sUser.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.sUser.username" for="field_username">Username</label>
+            <input type="text" class="form-control" name="username" id="field_username"
+                    ng-model="vm.sUser.username"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.sUser.image" for="field_image">Image</label>
+            <input type="text" class="form-control" name="image" id="field_image"
+                    ng-model="vm.sUser.image"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.sUser.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="vm.sUser.email"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.sUser.passwd" for="field_passwd">Passwd</label>
+            <input type="text" class="form-control" name="passwd" id="field_passwd"
+                    ng-model="vm.sUser.passwd"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.sUser.tell" for="field_tell">Tell</label>
+            <input type="text" class="form-control" name="tell" id="field_tell"
+                    ng-model="vm.sUser.tell"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.sUser.integral" for="field_integral">Integral</label>
+            <input type="number" class="form-control" name="integral" id="field_integral"
+                    ng-model="vm.sUser.integral"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.sUser.extra1" for="field_extra1">Extra 1</label>
+            <input type="text" class="form-control" name="extra1" id="field_extra1"
+                    ng-model="vm.sUser.extra1"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trainingApp.sUser.extra2" for="field_extra2">Extra 2</label>
+            <input type="text" class="form-control" name="extra2" id="field_extra2"
+                    ng-model="vm.sUser.extra2"
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
