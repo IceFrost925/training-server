@@ -25,4 +25,6 @@ public interface AddressRepository extends JpaRepository<Address, Long> {
 
     @Query("select su from Address su where su.id = ?1 and su.extra1 = ?2")
     Address findOneById(Long id, String active);
+
+    List<Address> findAddressBySuser_IdAndFlagAndExtra1(Long userId,Boolean flag,String active);
 }

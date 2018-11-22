@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -95,6 +96,7 @@ public class ShoppingServiceImpl implements ShoppingService {
                 shopping1.setNumber(shopping.getNumber() + shopping1.getNumber());
                 shoppingRepository.save(shopping1);
             } else {
+                shopping.setExtra1("'1'");
                 shoppingRepository.save(shopping);
             }
             return ResultObj.backInfo(true, 200, "添加成功", null);
@@ -104,26 +106,47 @@ public class ShoppingServiceImpl implements ShoppingService {
 
     @Override
     public ResultObj updateShoppingNumber(Long id, String number) {
-        if(Integer.parseInt(number) <= 0){
-            shoppingRepository.delete(id);
-            return ResultObj.backInfo(true, 200, "删除成功", null);
-        }else{
-            Shopping shopping = shoppingRepository.findOne(id);
-            shopping.setNumber(number);
-            shoppingRepository.save(shopping);
-            return ResultObj.backInfo(true, 200, "修改成功", null);
-        }
+        Shopping shopping = shoppingRepository.findOne(id);
+        shopping.setNumber(number);
+        shoppingRepository.save(shopping);
+        return ResultObj.backInfo(true, 200, "修改成功", null);
     }
-
+    /*
+    *
+    * */
     @Override
     public ResultObj deleteShopping(Long id) {
-        shoppingRepository.delete(id);
+        Shopping shopping = shoppingRepository.findOne(id);
+        shopping.setExtra1("'0'");
+        shoppingRepository.save(shopping);
         return ResultObj.backInfo(true, 200, "删除成功", null);
     }
 
     @Override
     public List<Shopping> selectShopping(Long userId) {
-        return shoppingRepository.findBySuserId(userId);
+        log.info(userId.toString());
+        return shoppingRepository.findBySuserIdAndExtra1(userId,"'1'");
     }
+
+    @Override
+    public List<Shopping> selectShoppingByIdList(String[] idList) {
+        List<Shopping> list = new ArrayList<>();
+        for(int i = 0;i<idList.length;i++){
+            Shopping shopping =shoppingRepository.findOne(Long.valueOf(idList[i]));
+            list.add(shopping);
+        }
+        return list;
+    }
+
+    @Override
+    public ResultObj deleteShoppingList(String[] idList) {
+        for(int i = 0;i<idList.length;i++){
+            Shopping shopping = shoppingRepository.findOne(Long.valueOf(idList[i]));
+            shopping.setExtra1("'0'");
+            shoppingRepository.save(shopping);
+        }
+        return ResultObj.backInfo(true, 200, "删除成功", null);
+    }
+
 
 }

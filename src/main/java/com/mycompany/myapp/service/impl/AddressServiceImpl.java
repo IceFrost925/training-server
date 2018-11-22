@@ -152,4 +152,10 @@ public class AddressServiceImpl implements AddressService {
     public Address findOneById(Long id) {
         return addressRepository.findOneById(id,"'1'");
     }
+
+    @Override
+    public List<Address> getDefaultAddresses(Long userId,Boolean flag) {
+        return addressRepository.findAddressBySuser_IdAndFlagAndExtra1(userId,flag,"'1'");
+    }
+
 }

@@ -33,12 +33,28 @@ public class OrderController {
         return ordersService.createOrder(ordersDTO);
     }
 
-    @ApiOperation("支付订单表 RequestBody")
-    @PostMapping("/permit/order/update/address")
+    @ApiOperation("延迟支付订单表 RequestParam")
+    @PostMapping("/permit/order/pay/postpone/id")
     @Timed
-    public ResultObj updteOrderAddress(@RequestParam Long id,@RequestParam Long addressId) throws URISyntaxException {
-        return ordersService.updateOrderAddress(id,addressId);
+    public ResultObj payPostpone(@RequestParam Long id) throws URISyntaxException {
+        return ordersService.updateOrderAddress(id);
     }
+
+    @ApiOperation("立即支付 RequestParam")
+    @PostMapping("/permit/order/pay")
+    @Timed
+    public ResultObj payOrder(@RequestParam Long userId,@RequestParam String extra2) throws URISyntaxException {
+        return ordersService.payOrder(userId,extra2);
+    }
+
+    @ApiOperation("修改立即支付状态 RequestParam")
+    @PostMapping("/permit/order/pay/status")
+    @Timed
+    public ResultObj updatePayOrderStatus(@RequestParam Long userId,@RequestParam String extra2) throws URISyntaxException {
+        return ordersService.updatePayOrderStatus(userId,extra2);
+    }
+
+
 
     @ApiOperation("查询未完成 RequestParams")
     @GetMapping("/permit/order/select/unfinished/userId")

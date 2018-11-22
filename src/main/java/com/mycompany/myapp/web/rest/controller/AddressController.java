@@ -54,6 +54,14 @@ public class AddressController {
         return ResultObj.back(200,addressService.findAllAddress(userId));
     }
 
+    @ApiOperation("查询地址(是否默认) RequestParam")
+    @PostMapping("/permit/addresses/default")
+    @Timed
+    public ResultObj getDefaultAddresses(@RequestParam Long userId,Boolean flag) {
+        return ResultObj.back(200,addressService.getDefaultAddresses(userId,flag));
+    }
+
+
     @ApiOperation("根据id查询 RequestParams")
     @GetMapping("/permit/addresses/select/id")
     @Timed

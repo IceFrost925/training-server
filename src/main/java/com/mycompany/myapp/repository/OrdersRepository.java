@@ -15,4 +15,6 @@ import java.util.List;
 @Repository
 public interface OrdersRepository extends JpaRepository<Orders, Long> {
     List<Orders> findBySuserIdAndExtra1(Long userId,String active);
+
+    Orders findBySuserIdAndExtra2(Long id,String extra2);
 }

@@ -15,7 +15,7 @@ import java.util.List;
 @Repository
 public interface ShoppingRepository extends JpaRepository<Shopping, Long> {
 
-    List<Shopping> findBySuserId(Long id);
+    List<Shopping> findBySuserIdAndExtra1(Long id,String active);
 
     Shopping findByBookId_IdAndSuser_Id(Long bookId,Long userId);
 }

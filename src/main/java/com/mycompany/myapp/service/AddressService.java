@@ -52,4 +52,6 @@ public interface AddressService {
     ResultObj updateDefaultAddress(Long userId,Long AddressId);
 
     Address findOneById(Long id);
+
+    List<Address> getDefaultAddresses(Long userId,Boolean flag);
 }

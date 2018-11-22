@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URISyntaxException;
+import java.util.List;
 
 @Api(description = "购物车管理")
 @RestController
@@ -46,6 +47,21 @@ public class ShoppingController {
                                     @ApiParam(name = "number",value = "数量") @RequestParam String number) throws URISyntaxException {
         return shoppingService.updateShoppingNumber(id,number);
     }
+
+    @ApiOperation("查询shoppingListById RequestParams")
+    @PostMapping("/permit/shopping/idList")
+    @Timed
+    public ResultObj getShoppingList(@ApiParam(name = "idList",value = "idList") @RequestParam String[] idList) throws URISyntaxException {
+        return ResultObj.back(200,shoppingService.selectShoppingByIdList(idList));
+    }
+
+    @ApiOperation("删除某个商品 RequestParams")
+    @DeleteMapping("/permit/shopping/delete/idList")
+    @Timed
+    public ResultObj deleteShoppingList(@ApiParam(name = "idList",value = "idList") @RequestParam String[] idList) throws URISyntaxException {
+        return shoppingService.deleteShoppingList(idList);
+    }
+
 
     @ApiOperation("删除某个商品 RequestParams")
     @DeleteMapping("/permit/shopping/delete/id")

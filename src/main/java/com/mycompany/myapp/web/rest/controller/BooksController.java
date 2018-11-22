@@ -52,4 +52,36 @@ public class BooksController {
     public ResultObj selectBooksById(@ApiParam(name="id",value="ID",required=true) @RequestParam Long id) {
         return ResultObj.back(200,booksService.selectBooksById(id));
     }
+
+    @ApiOperation("根据extra1(星级)查 RequestParam")
+    @PostMapping("/permit/books/select/extra1")
+    @Timed
+    public ResultObj selectBooksByStar(@ApiParam(name="extra1",value="星级",required=true) @RequestParam String extra1) {
+        return ResultObj.back(200,booksService.selectBooksByStar(extra1));
+    }
+
+    @ApiOperation("查最新书籍 RequestParam")
+    @GetMapping("/permit/books/select/lasted")
+    @Timed
+    public ResultObj selectBooksLasted() {
+        return ResultObj.back(200,booksService.selectBooksLasted());
+    }
+
+
+    @ApiOperation("根据根类型查书籍 RequestParam")
+    @PostMapping("/permit/books/select/first/type")
+    @Timed
+    public ResultObj selectBooksByFirstType(@ApiParam(name="type",value="类型",required=true) @RequestParam String type) {
+        return ResultObj.back(200,booksService.selectBooksByFirstType(type));
+    }
+
+    @ApiOperation("根据书籍名字查 RequestParam")
+    @PostMapping("/permit/books/select/name")
+    @Timed
+    public ResultObj selectBooksByName(@ApiParam(name="name",value="书名",required=true) @RequestParam String name) {
+        return ResultObj.back(200,booksService.selectBooksByName(name));
+    }
+
+
+
 }

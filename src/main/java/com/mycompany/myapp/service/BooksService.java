@@ -48,4 +48,12 @@ public interface BooksService {
     List<Books> selectBooksByType(String type);
 
     Books selectBooksById(Long id);
+
+    List<Books> selectBooksByStar(String star);
+
+    List<Books> selectBooksLasted();
+
+    List<Books> selectBooksByFirstType(String type);
+
+    List<Books> selectBooksByName(String name);
 }

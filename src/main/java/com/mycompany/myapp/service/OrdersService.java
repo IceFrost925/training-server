@@ -1,6 +1,7 @@
 package com.mycompany.myapp.service;
 
 import com.mycompany.myapp.domain.Orders;
+import com.mycompany.myapp.service.dto.OrderListDTO;
 import com.mycompany.myapp.service.dto.OrdersDTO;
 import com.mycompany.myapp.web.rest.util.ResultObj;
 
@@ -43,9 +44,13 @@ public interface OrdersService {
 
     ResultObj createOrder(OrdersDTO ordersDTO);
 
-    ResultObj updateOrderAddress(Long id,Long addressId);
+    ResultObj updateOrderAddress(Long id);
 
-    List<Orders> selectAllOrders(Long userId);
+    List<OrderListDTO> selectAllOrders(Long userId);
 
-    List<Orders> selectAllUnfinishedOrders(Long userId);
+    List<OrderListDTO> selectAllUnfinishedOrders(Long userId);
+
+    ResultObj payOrder(Long id,String extra2);
+
+    ResultObj updatePayOrderStatus(Long userId, String extra2);
 }

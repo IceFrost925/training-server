@@ -8,6 +8,7 @@ import com.mycompany.myapp.web.rest.CollectResource;
 import com.mycompany.myapp.web.rest.util.ResultObj;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
@@ -42,9 +43,9 @@ public class CollectController {
 
 
     @ApiOperation("删除愿望清单 RequestParams")
-    @DeleteMapping("/permit/collect/delete")
+    @DeleteMapping("/permit/collect/delete/id")
     @Timed
-    public ResultObj deleteCollect(@RequestParam Long id) throws URISyntaxException {
+    public ResultObj deleteCollect(@ApiParam(name = "id",value = "id") @RequestParam Long id) throws URISyntaxException {
         return collectService.deleteCollect(id);
     }
 }

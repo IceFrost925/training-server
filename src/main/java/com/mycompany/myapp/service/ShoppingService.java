@@ -48,4 +48,8 @@ public interface ShoppingService {
     ResultObj deleteShopping(Long bookId);
 
     List<Shopping> selectShopping(Long userId);
+
+    List<Shopping> selectShoppingByIdList(String[] idList);
+
+    ResultObj deleteShoppingList(String[] idList);
 }
